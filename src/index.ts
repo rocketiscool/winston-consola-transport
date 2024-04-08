@@ -2,6 +2,11 @@ import Transport from 'winston-transport'
 import consola from 'consola'
 
 export class ConsolaTransport extends Transport {
+
+    constructor() {
+        super()
+    }
+
     log(info: any, callback: () => void): void {
         setImmediate(() => {
             this.emit('logged', info);
@@ -30,4 +35,5 @@ export class ConsolaTransport extends Transport {
             callback();
         }
     }
+
 }
