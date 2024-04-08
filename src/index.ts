@@ -3,10 +3,6 @@ import consola from 'consola'
 
 export class ConsolaTransport extends Transport {
 
-    constructor() {
-        super()
-    }
-
     log(info: any, callback: () => void): void {
         setImmediate(() => {
             this.emit('logged', info);
